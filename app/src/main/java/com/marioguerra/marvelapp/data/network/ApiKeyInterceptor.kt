@@ -3,7 +3,9 @@ package com.marioguerra.marvelapp.data.network
 import com.marioguerra.marvelapp.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
-
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 class ApiKeyInterceptor(private val apiHelper: ApiHelper) : Interceptor {
 
     companion object {

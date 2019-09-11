@@ -1,7 +1,9 @@
 package com.marioguerra.marvelapp.data.model
 
 import com.google.gson.annotations.SerializedName
-
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 class Image(
     @SerializedName("path") val path: String?,
     @SerializedName("extension") val extension: String?

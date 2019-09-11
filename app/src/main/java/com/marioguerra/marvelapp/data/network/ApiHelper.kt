@@ -3,7 +3,9 @@ package com.marioguerra.marvelapp.data.network
 import com.marioguerra.marvelapp.BuildConfig
 import java.math.BigInteger
 import java.security.MessageDigest
-
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 class ApiHelper {
 
     companion object {

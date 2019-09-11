@@ -7,7 +7,9 @@ import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
-
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 interface CharacterService {
 
     @GET("/v1/public/characters")
