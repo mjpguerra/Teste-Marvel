@@ -3,17 +3,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/plano_de_fundo"
     tools:context=".app.ui.characters.CharactersFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCharacters"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/ablCollapse"
         android:layout_width="match_parent"
-        android:background="@drawable/plano_de_fundo"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:background="@null"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
 
-    <ProgressBar
-        android:id="@+id/pbLoading"
-        style="@style/LoadingProgressbar" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimaryDark"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/marvel_logo" />
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCharacters"
+            android:layout_width="match_parent"
+            android:background="@drawable/plano_de_fundo"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:id="@+id/pbLoading"
+            style="@style/LoadingProgressbar" />
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
 
 </FrameLayout>

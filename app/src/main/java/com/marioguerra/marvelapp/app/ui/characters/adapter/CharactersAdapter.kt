@@ -5,10 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.marioguerra.marvelapp.R
 import com.marioguerra.marvelapp.app.base.recycler.PaginationAdapter
+import com.marioguerra.marvelapp.app.ui.utils.addButtonAnimation
 import com.marioguerra.marvelapp.data.model.character.Character
 import com.squareup.picasso.Picasso
 
@@ -51,6 +53,7 @@ class CharactersAdapter(
     class CharacterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val ivCharacterAvatar: ImageView = itemView.findViewById(R.id.ivCharacterAvatar)
         private val tvCharacterName: TextView = itemView.findViewById(R.id.tvCharacterName)
+        private val card: CardView = itemView.findViewById(R.id.card)
 
         fun bind(character: Character) {
            // Glide.with(ivCharacterAvatar)
@@ -58,6 +61,9 @@ class CharactersAdapter(
             //    .fitCenter()
             //    .centerCrop()
              //   .into(ivCharacterAvatar)
+
+
+            card.addButtonAnimation()
 
             Picasso.get().load(character.image?.getFullPath()).fit().into(ivCharacterAvatar)
 

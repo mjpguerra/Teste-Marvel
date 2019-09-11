@@ -22,7 +22,8 @@ class CharacterInfoActivity : BaseActivity(), MainNavigatorProvider {
         mainNavigator = MainNavigator(supportFragmentManager, R.id.flMainContainer)
 
         if (savedInstanceState == null) {
-            val characterInfoFragment = CharacterInfoFragment.newInstance(bundle.getInt("id"),
+            val characterInfoFragment = CharacterInfoFragment.newInstance(
+                bundle.getInt("id"),
                 bundle.getString("name"),
                 bundle.getString("image")
             )

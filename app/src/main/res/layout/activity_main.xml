@@ -5,4 +5,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/plano_de_fundo"
-    tools:context=".app.ui.main.MainActivity" />
+    tools:context=".app.ui.characters.CharacterActivity" />

@@ -23,6 +23,7 @@ import com.marioguerra.marvelapp.app.ui.characters.CharactersFragment
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.marioguerra.marvelapp.app.ui.utils.addButtonAnimation
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.bottom_sheet_home.*
 import kotlinx.android.synthetic.main.character_info_fragment.*
@@ -119,6 +120,10 @@ class CharacterInfoFragment : BaseFragment() {
         val characterName = arguments!!.getString(CHARACTER_NAME_KEY)
         val imageUrl = arguments!!.getString(IMAGE_URL_KEY)
 
+        cvName.addButtonAnimation()
+        floatingActionButton.addButtonAnimation()
+        tvCharacterDescription.addButtonAnimation()
+
         val dataComponent = (activity!!.application as App).provideDataComponent()
         val characterDataSource = dataComponent.provideCharacterRepository()
         val viewModelFactory = CharacterInfoViewModel.Factory(characterId, characterDataSource)
@@ -138,6 +143,8 @@ class CharacterInfoFragment : BaseFragment() {
                // pbLoading.hide()
             }
         })
+
+
 
         viewModel.getCharacterInfo().observe(viewLifecycleOwner, Observer {
             val description = it.description

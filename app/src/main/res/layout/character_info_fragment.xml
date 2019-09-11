@@ -59,9 +59,6 @@
 
                     </LinearLayout>
 
-
-
-
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"

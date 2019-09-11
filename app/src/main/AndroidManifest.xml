@@ -25,6 +25,7 @@
         </activity>
 
         <activity android:name=".app.ui.characters.CharacterActivity"></activity>
+        <activity android:name=".app.ui.WebViewActivity"></activity>
 
 
         <activity
