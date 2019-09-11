@@ -20,7 +20,7 @@ class NetworkModule {
 
     companion object {
         private const val MARVEL_API_URL = "https://gateway.marvel.com/"
-        private const val TIME_OUT = 30L
+        private const val TIME_OUT = 20L
     }
 
     @Provides

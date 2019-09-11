@@ -14,25 +14,18 @@ class CharactersPagedDataSource(
     error: MutableLiveData<Throwable>
 ) : PaginationDataSource<Character>(initialLoading, pagination, error) {
 
-    override fun loadInitialData(
-        params: LoadInitialParams,
-        callback: LoadInitialCallback<Character>
-    ) {
+    override fun loadInitialData(params: LoadInitialParams, callback: LoadInitialCallback<Character>) {
         val characters = getCharacters(params.pageSize, params.requestedStartPosition)
         callback.onResult(characters, 0)
     }
 
-    override fun loadRangeData(
-        params: LoadRangeParams,
-        callback: LoadRangeCallback<Character>
-    ) {
+    override fun loadRangeData(params: LoadRangeParams, callback: LoadRangeCallback<Character>) {
         val characters = getCharacters(params.loadSize, params.startPosition)
         callback.onResult(characters)
     }
 
     private fun getCharacters(limit: Int, offset: Int): List<Character> {
-        return characterDataSource.getCharacters(limit, offset)
-            .blockingGet()
+        return characterDataSource.getCharacters(limit, offset).blockingGet()
     }
 
 }

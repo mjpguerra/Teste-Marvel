@@ -1,4 +1,4 @@
-package com.marioguerra.marvelapp.app.ui.main
+package com.marioguerra.marvelapp.app.ui.characters
 
 import android.os.Bundle
 import com.marioguerra.marvelapp.R
@@ -8,7 +8,7 @@ import com.marioguerra.marvelapp.app.navigation.MainNavigatorProvider
 import com.marioguerra.marvelapp.app.ui.characters.CharactersFragment
 import com.marioguerra.marvelapp.app.ui.utils.showCustomDialog
 
-class MainActivity : BaseActivity(), MainNavigatorProvider {
+class CharacterActivity : BaseActivity(), MainNavigatorProvider {
 
     private lateinit var mainNavigator: MainNavigator
 

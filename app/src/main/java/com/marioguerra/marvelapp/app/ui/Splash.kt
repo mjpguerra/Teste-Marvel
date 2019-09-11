@@ -6,8 +6,8 @@ import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.marioguerra.marvelapp.R
 import com.marioguerra.marvelapp.app.navigation.MainNavigator
+import com.marioguerra.marvelapp.app.ui.characters.CharacterActivity
 import com.marioguerra.marvelapp.app.ui.characters.CharactersFragment
-import com.marioguerra.marvelapp.app.ui.main.MainActivity
 
 class Splash : AppCompatActivity() {
 
@@ -20,7 +20,7 @@ class Splash : AppCompatActivity() {
             {
                 val mIntent = Intent(
                     baseContext,
-                    MainActivity::class.java
+                    CharacterActivity::class.java
                 )
                 startActivity(mIntent)
                 finish()

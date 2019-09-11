@@ -21,8 +21,7 @@ class CharactersViewModel(characterDataSource: CharacterDataSource) : BaseViewMo
 
     private val pagination = MutableLiveData<Boolean>()
 
-    private val charactersSourceFactory =
-        CharactersSourceFactory(characterDataSource, loading, pagination, error)
+    private val charactersSourceFactory = CharactersSourceFactory(characterDataSource, loading, pagination, error)
 
     private val config = PagedList.Config.Builder()
         .setEnablePlaceholders(false)

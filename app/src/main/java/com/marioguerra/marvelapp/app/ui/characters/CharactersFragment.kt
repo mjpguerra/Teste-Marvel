@@ -20,6 +20,7 @@ import com.marioguerra.marvelapp.app.ui.character_info.CharacterInfoActivity
 import com.marioguerra.marvelapp.app.ui.character_info.CharacterInfoFragment
 import com.marioguerra.marvelapp.app.ui.characters.adapter.CharacterDiffCallback
 import com.marioguerra.marvelapp.app.ui.characters.adapter.CharactersAdapter
+import com.marioguerra.marvelapp.app.ui.utils.showCustomDialog
 import com.marioguerra.marvelapp.data.model.character.Character
 import kotlinx.android.synthetic.main.characters_fragment.*
 
@@ -40,6 +41,17 @@ class CharactersFragment : BaseFragment() {
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val dataComponent = (activity!!.applicationContext as App).provideDataComponent()
+        val characterDataSource = dataComponent.provideCharacterRepository()
+        val viewModelFactory = CharactersViewModel.Factory(characterDataSource)
+
+        viewModel = ViewModelProviders.of(this, viewModelFactory).get(CharactersViewModel::class.java)
+
+    }
+
     private val characterListener = object : CharactersAdapter.CharacterListener {
         override fun onCharacterClick(character: Character) {
 
@@ -51,10 +63,7 @@ class CharactersFragment : BaseFragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.characters_fragment, container, false)
     }
 
@@ -63,12 +72,11 @@ class CharactersFragment : BaseFragment() {
 
         setupRecyclerView()
 
-        val dataComponent = (activity!!.applicationContext as App).provideDataComponent()
-        val characterDataSource = dataComponent.provideCharacterRepository()
-        val viewModelFactory = CharactersViewModel.Factory(characterDataSource)
+        getCharacter()
+    }
 
-        viewModel = ViewModelProviders.of(this, viewModelFactory)
-            .get(CharactersViewModel::class.java)
+    fun getCharacter(){
+
 
         viewModel.getPagination().observe(viewLifecycleOwner, Observer {
             handlePagination(it)
@@ -78,14 +86,15 @@ class CharactersFragment : BaseFragment() {
             handleLoading(it)
         })
 
+        viewModel.characters.observe(viewLifecycleOwner,
+            Observer {
+                adapter.submitList(it)
+            }
+        )
+
         viewModel.getError().observe(viewLifecycleOwner, Observer {
-            handleError(it)
-        })
-
-        viewModel.characters.observe(viewLifecycleOwner, Observer {
-            adapter.submitList(it)
-        })
-
+                handleError(it)
+            })
     }
 
     private fun setupRecyclerView() {
@@ -95,6 +104,7 @@ class CharactersFragment : BaseFragment() {
         val layoutManager = GridLayoutManager(context, SPAN_COUNT).apply {
             spanSizeLookup = this@CharactersFragment.spanSizeLookup
         }
+
         rvCharacters.apply {
             this.layoutManager = layoutManager
             this.adapter = this@CharactersFragment.adapter
@@ -121,7 +131,19 @@ class CharactersFragment : BaseFragment() {
 
     private fun handleError(throwable: Throwable) {
         val errorHandler = ErrorHandler(context!!)
-        view?.longSnackBar(errorHandler.getErrorMessage(throwable))
+      //  view?.longSnackBar(errorHandler.getErrorMessage(throwable))
+
+        activity!!.showCustomDialog(image = R.drawable.ic_warning, title =
+        R.string.dialog_retry_message, subtitleString = errorHandler.getErrorMessage(throwable),
+            no = {
+                activity!!.finish()
+            }, noDismissesDialog = true, yes =
+            {
+                startActivity(Intent(activity!!, CharacterActivity::class.java)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                activity!!.finish()
+
+            }, yesDismissesDialog = true)
     }
 
 }

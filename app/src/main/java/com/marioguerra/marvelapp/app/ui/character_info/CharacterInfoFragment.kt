@@ -143,7 +143,6 @@ class CharacterInfoFragment : BaseFragment() {
             val description = it.description
             if (description != null && description.isNotEmpty()) {
                 tvCharacterDescription.text = description
-
             } else {
                 tvCharacterDescription.text = getString(R.string.description_not_found)
             }
