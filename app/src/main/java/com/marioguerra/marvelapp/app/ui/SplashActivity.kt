@@ -19,23 +19,17 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splash)
-        //
-        Handler().postDelayed(
-            {
-                val mIntent = Intent(
-                    baseContext,
-                    CharacterActivity::class.java
-                )
+
+        Handler().postDelayed({
+                val mIntent = Intent(baseContext, CharacterActivity::class.java)
                 startActivity(mIntent)
                 finish()
             },
             TIME_OUT.toLong()
         )
-
     }
 
     companion object {
-
         private const val TIME_OUT = 2000
     }
 }
