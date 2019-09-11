@@ -26,9 +26,9 @@ class CharacterInfoActivity : BaseActivity(), MainNavigatorProvider {
 
         if (savedInstanceState == null) {
             val characterInfoFragment = CharacterInfoFragment.newInstance(
-                bundle.getInt("id"),
-                bundle.getString("name"),
-                bundle.getString("image")
+                bundle!!.getInt("id"),
+                bundle!!.getString("name"),
+                bundle!!.getString("image")
             )
 
             mainNavigator.addFragment(characterInfoFragment, false, CharactersFragment.TAG)

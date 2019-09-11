@@ -7,7 +7,6 @@ import com.marioguerra.marvelapp.app.di.module.ContextModule
 /**
  * @author Mario Guerra on 11/09/2019
  */
-
 class App : Application() {
 
     private lateinit var dataComponent: DataComponent

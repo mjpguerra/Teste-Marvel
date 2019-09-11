@@ -27,7 +27,6 @@
         <activity android:name=".app.ui.characters.CharacterActivity"></activity>
         <activity android:name=".app.ui.WebActivity"></activity>
 
-
         <activity
             android:name=".app.ui.character_info.CharacterInfoActivity"
             android:screenOrientation="portrait"
