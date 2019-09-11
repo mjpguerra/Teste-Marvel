@@ -10,11 +10,11 @@ import com.marioguerra.marvelapp.app.base.viewmodel.BaseViewModel
 import com.marioguerra.marvelapp.app.source.CharacterDataSource
 import com.marioguerra.marvelapp.data.model.character.CharacterInfo
 
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
-class CharacterInfoViewModel(
-    private val characterId: Int,
-    private val characterDataSource: CharacterDataSource
-) : BaseViewModel() {
+class CharacterInfoViewModel(private val characterId: Int, private val characterDataSource: CharacterDataSource) : BaseViewModel() {
 
     private val characterInfo = MutableLiveData<CharacterInfo>()
 

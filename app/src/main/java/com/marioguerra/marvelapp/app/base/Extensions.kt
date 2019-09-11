@@ -6,6 +6,9 @@ import com.google.android.material.snackbar.Snackbar
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
 const val ANIMATION_DURATION = 350L
 

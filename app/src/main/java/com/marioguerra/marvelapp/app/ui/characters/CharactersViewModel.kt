@@ -11,6 +11,9 @@ import com.marioguerra.marvelapp.app.source.CharacterDataSource
 import com.marioguerra.marvelapp.app.ui.characters.source.CharactersSourceFactory
 import java.util.concurrent.Executors
 
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
 class CharactersViewModel(characterDataSource: CharacterDataSource) : BaseViewModel() {
 

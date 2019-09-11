@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
 abstract class BaseFragment : Fragment() {
 

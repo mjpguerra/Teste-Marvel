@@ -12,19 +12,19 @@ import com.marioguerra.marvelapp.App
 import com.marioguerra.marvelapp.R
 import com.marioguerra.marvelapp.app.base.error.ErrorHandler
 import com.marioguerra.marvelapp.app.base.hide
-import com.marioguerra.marvelapp.app.base.longSnackBar
 import com.marioguerra.marvelapp.app.base.show
 import com.marioguerra.marvelapp.app.base.ui.BaseFragment
-import com.marioguerra.marvelapp.app.navigation.MainNavigatorProvider
-import com.marioguerra.marvelapp.app.ui.WebViewActivity
+import com.marioguerra.marvelapp.app.ui.WebActivity
 import com.marioguerra.marvelapp.app.ui.character_info.CharacterInfoActivity
-import com.marioguerra.marvelapp.app.ui.character_info.CharacterInfoFragment
 import com.marioguerra.marvelapp.app.ui.characters.adapter.CharacterDiffCallback
 import com.marioguerra.marvelapp.app.ui.characters.adapter.CharactersAdapter
 import com.marioguerra.marvelapp.app.ui.utils.addButtonAnimation
 import com.marioguerra.marvelapp.app.ui.utils.showCustomDialog
 import com.marioguerra.marvelapp.data.model.character.Character
 import kotlinx.android.synthetic.main.characters_fragment.*
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
 class CharactersFragment : BaseFragment() {
 
@@ -76,7 +76,7 @@ class CharactersFragment : BaseFragment() {
         imageView.addButtonAnimation()
 
         imageView.setOnClickListener {
-            startActivity(Intent(activity!!, WebViewActivity::class.java)
+            startActivity(Intent(activity!!, WebActivity::class.java)
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
 

@@ -3,6 +3,9 @@ package com.marioguerra.marvelapp.app.base.recycler
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PositionalDataSource
 import java.lang.RuntimeException
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
 abstract class PaginationDataSource<T>(
     private val initialLoading: MutableLiveData<Boolean>,

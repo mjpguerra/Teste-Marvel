@@ -8,6 +8,9 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.marioguerra.marvelapp.R
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
 abstract class PaginationAdapter<T>(
     context: Context,

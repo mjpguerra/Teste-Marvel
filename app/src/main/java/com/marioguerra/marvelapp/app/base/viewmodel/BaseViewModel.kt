@@ -6,6 +6,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
 abstract class BaseViewModel : ViewModel() {
 

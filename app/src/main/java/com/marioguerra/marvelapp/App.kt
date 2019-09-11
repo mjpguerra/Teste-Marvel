@@ -4,6 +4,9 @@ import android.app.Application
 import com.marioguerra.marvelapp.app.di.component.DaggerDataComponent
 import com.marioguerra.marvelapp.app.di.component.DataComponent
 import com.marioguerra.marvelapp.app.di.module.ContextModule
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
 class App : Application() {
 

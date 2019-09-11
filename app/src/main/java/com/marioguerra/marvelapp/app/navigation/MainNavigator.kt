@@ -2,6 +2,9 @@ package com.marioguerra.marvelapp.app.navigation
 
 import androidx.fragment.app.FragmentManager
 import com.marioguerra.marvelapp.app.base.ui.BaseFragment
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
 class MainNavigator(
     private val fragmentManager: FragmentManager,

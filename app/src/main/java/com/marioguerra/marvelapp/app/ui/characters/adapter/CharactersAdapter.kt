@@ -13,6 +13,9 @@ import com.marioguerra.marvelapp.app.base.recycler.PaginationAdapter
 import com.marioguerra.marvelapp.app.ui.utils.addButtonAnimation
 import com.marioguerra.marvelapp.data.model.character.Character
 import com.squareup.picasso.Picasso
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
 class CharactersAdapter(
     context: Context,

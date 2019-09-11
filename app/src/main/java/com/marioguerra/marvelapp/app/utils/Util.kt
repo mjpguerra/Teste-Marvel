@@ -17,12 +17,12 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import com.marioguerra.marvelapp.R
 
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
-class SDUtil {
 
-}
-
-    fun Activity.showCustomDialog(
+fun Activity.showCustomDialog(
         image: Int? = null,
         title: Int? = null,
         subtitle: Int? = null,

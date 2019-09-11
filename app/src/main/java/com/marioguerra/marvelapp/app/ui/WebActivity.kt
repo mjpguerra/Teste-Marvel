@@ -17,7 +17,11 @@ import kotlinx.android.synthetic.main.layout.*
 import kotlinx.android.synthetic.main.layout.pbLoading
 import kotlinx.android.synthetic.main.layout.toolbar
 
-class WebViewActivity : AppCompatActivity() {
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
+
+class WebActivity : AppCompatActivity() {
 
 
         var mywebview: WebView? = null

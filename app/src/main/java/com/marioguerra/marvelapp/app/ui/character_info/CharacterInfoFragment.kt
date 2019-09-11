@@ -28,6 +28,9 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.bottom_sheet_home.*
 import kotlinx.android.synthetic.main.character_info_fragment.*
 import kotlin.math.abs
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
 class CharacterInfoFragment : BaseFragment() {
     enum class State {

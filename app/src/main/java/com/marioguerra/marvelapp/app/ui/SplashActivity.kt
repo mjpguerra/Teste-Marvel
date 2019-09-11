@@ -9,7 +9,11 @@ import com.marioguerra.marvelapp.app.navigation.MainNavigator
 import com.marioguerra.marvelapp.app.ui.characters.CharacterActivity
 import com.marioguerra.marvelapp.app.ui.characters.CharactersFragment
 
-class Splash : AppCompatActivity() {
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
+
+class SplashActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

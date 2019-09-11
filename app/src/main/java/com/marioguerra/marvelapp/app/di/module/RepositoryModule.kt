@@ -6,6 +6,9 @@ import com.marioguerra.marvelapp.data.network.RequestUtils
 import com.marioguerra.marvelapp.data.repository.CharacterRepository
 import dagger.Module
 import dagger.Provides
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
 @Module(includes = [NetworkModule::class])
 class RepositoryModule {

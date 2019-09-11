@@ -8,6 +8,9 @@ import com.marioguerra.marvelapp.app.navigation.MainNavigatorProvider
 import com.marioguerra.marvelapp.app.ui.characters.CharactersFragment
 import com.marioguerra.marvelapp.app.ui.utils.showCustomDialog
 
+/**
+ * @author Mario Guerra on 11/09/2019
+ */
 
 class CharacterInfoActivity : BaseActivity(), MainNavigatorProvider {
 
