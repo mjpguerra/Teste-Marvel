@@ -68,7 +68,9 @@ class CharactersAdapter(
 
             card.addButtonAnimation()
 
-            Picasso.get().load(character.image?.getFullPath()).fit().into(ivCharacterAvatar)
+            var url : String? = character.image?.getFullPath()
+
+            Picasso.get().load(url).fit().into(ivCharacterAvatar)
 
             tvCharacterName.text = character.name
         }
