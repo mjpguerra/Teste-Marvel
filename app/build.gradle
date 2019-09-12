@@ -8,6 +8,7 @@ apply plugin: 'kotlin-kapt'
 
 def MARVEL_API_KEY = '"' + MarvelApiKey + '"' ?: '"Define Marvel API Key"'
 def MARVEL_API_PRIVATE_KEY = '"' + MarvelApiPrivateKey + '"' ?: '"Define Marvel API Secret Key"'
+def MARVEL_API_URL = '"' + MarvelUrl + '"' ?: '"Define Marvel Url"'
 
 android {
     compileSdkVersion 29
@@ -22,6 +23,7 @@ android {
 
         buildConfigField "String", 'MARVEL_API_KEY', MARVEL_API_KEY
         buildConfigField "String", 'MARVEL_API_PRIVATE_KEY', MARVEL_API_PRIVATE_KEY
+        buildConfigField "String", 'MARVEL_API_URL', MARVEL_API_URL
     }
     buildTypes {
         release {

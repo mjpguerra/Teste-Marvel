@@ -2,6 +2,8 @@ package com.marioguerra.marvelapp.app.di.module
 
 import android.content.Context
 import android.net.ConnectivityManager
+import android.os.Build
+import com.marioguerra.marvelapp.BuildConfig
 import com.marioguerra.marvelapp.data.network.ApiKeyInterceptor
 import com.marioguerra.marvelapp.data.network.CharacterService
 import com.marioguerra.marvelapp.data.network.ApiHelper
@@ -22,7 +24,6 @@ import javax.inject.Singleton
 class NetworkModule {
 
     companion object {
-        private const val MARVEL_API_URL = "https://gateway.marvel.com/"
         private const val TIME_OUT = 20L
     }
 
@@ -55,7 +56,7 @@ class NetworkModule {
         val rxJavaCallAdapter = RxJava2CallAdapterFactory.create()
 
         return Retrofit.Builder()
-            .baseUrl(MARVEL_API_URL)
+            .baseUrl(BuildConfig.MARVEL_API_URL)
             .client(okHttpClient)
             .addConverterFactory(gsonConverterFactory)
             .addCallAdapterFactory(rxJavaCallAdapter)
