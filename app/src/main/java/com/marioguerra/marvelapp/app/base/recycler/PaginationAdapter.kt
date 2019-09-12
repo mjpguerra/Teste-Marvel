@@ -12,9 +12,7 @@ import com.marioguerra.marvelapp.R
  * @author Mario Guerra on 11/09/2019
  */
 
-abstract class PaginationAdapter<T>(
-    context: Context,
-    diffCallback: DiffUtil.ItemCallback<T>
+abstract class PaginationAdapter<T>(context: Context, diffCallback: DiffUtil.ItemCallback<T>
 ) : PagedListAdapter<T, RecyclerView.ViewHolder>(diffCallback) {
 
     private var paginationStatus = PaginationStatus.HIDDEN
@@ -22,27 +20,24 @@ abstract class PaginationAdapter<T>(
     protected val layoutInflater: LayoutInflater = LayoutInflater.from(context)
 
     protected abstract fun getViewTypeForItem(position: Int): Int
-    protected abstract fun onCreateViewHolderForItem(
-        parent: ViewGroup,
-        viewType: Int
-    ): RecyclerView.ViewHolder
+    protected abstract fun onCreateViewHolderForItem(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder
 
     protected abstract fun onBindViewHolderForItem(holder: RecyclerView.ViewHolder, position: Int)
 
     override fun getItemViewType(position: Int): Int {
-        if (position == itemCount - 1 && paginationStatus == PaginationStatus.LOADING) {
-            return R.layout.item_pagination
+        return if (position == itemCount - 1 && paginationStatus == PaginationStatus.LOADING) {
+            R.layout.item_pagination
         } else {
-            return getViewTypeForItem(position)
+            getViewTypeForItem(position)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        if (viewType == R.layout.item_pagination) {
+        return if (viewType == R.layout.item_pagination) {
             val view = layoutInflater.inflate(R.layout.item_pagination, parent, false)
-            return PaginationItemViewHolder(view)
+            PaginationItemViewHolder(view)
         } else {
-            return onCreateViewHolderForItem(parent, viewType)
+            onCreateViewHolderForItem(parent, viewType)
         }
     }
 
